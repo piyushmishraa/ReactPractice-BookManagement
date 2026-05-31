@@ -1,0 +1,23 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    /* Stacks the form and the catalogue content cleanly */
+    gap: 30px;
+    padding: 20px;
+    position: relative;
+}
+
+/* This targets the Form container and makes it occupy its own row */
+.page>form,
+.page>div:first-child {
+    width: 100%;
+    max-width: 500px;
+    /* Keeps your form box from stretching too wide */
+}
+
+/* This targets the <h1>Catalogue</h1> text and forces it to clear the form */
+.page>h1 {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

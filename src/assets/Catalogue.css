@@ -1,0 +1,12 @@
+.allcard {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Force items side-by-side */
+    flex-wrap: wrap !important;
+    /* Wrap items to the next line when space runs out */
+    gap: 20px;
+    /* Clean spacing between cards */
+    width: 100% !important;
+    /* Expand horizontally across the screen */
+    box-sizing: border-box;
+}
