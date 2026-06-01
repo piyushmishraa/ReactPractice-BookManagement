@@ -3,7 +3,7 @@ import './form.css';
 
 const Form = (props) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [singleBook, setSingleBook] = useState({});
+
     const [bookName, setBookName] = useState('');
     const [author, setAuthor] = useState('');
     const [genre, setGenre] = useState('');
@@ -28,18 +28,7 @@ const Form = (props) => {
         setGenre(e.target.value);
     }
 
-    const createNewBook = () => {
-        const newBook = {
-            bookName: bookName,
-            author: author,
-            genre: genre
 
-        }
-        setSingleBook(newBook);
-        console.log(newBook.bookName);
-        console.log(newBook.author);
-        console.log("create new book")
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -47,12 +36,17 @@ const Form = (props) => {
             alert("Please enter all the fields");
             return;
         }
+        const newBook = {
+            bookName: bookName,
+            author: author,
+            genre: genre
+        };
 
-        props.add(singleBook);
+        props.add(newBook);
         setBookName('');
         setAuthor('');
         setGenre('');
-        setSingleBook({});
+
 
 
     }
@@ -77,7 +71,7 @@ const Form = (props) => {
                     }
                     <label> Enter Author name</label>
                     <input type='text' placeholder='name' value={author} onChange={(e) => { handleAuthor(e) }} />
-                    <button type="submit" onClick={() => createNewBook()} >Add to Catalogue</button>
+                    <button type="submit" >Add to Catalogue</button>
                 </form>
 
 
